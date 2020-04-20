@@ -12,14 +12,14 @@ app.post('/bot/webhook', function(req, res, next){
             var headers = {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + LINE_CHANNEL_ACCESS_TOKEN
-            }
+            };
             var body = {
                 replyToken: event.replyToken,
                 messages: [{
                     type: 'text',
                     text: 'こんにちは'
                 }]
-            }
+            };
             var url = 'https://api.line.me/v2/bot/message/reply';
             request({
                 url: url,
